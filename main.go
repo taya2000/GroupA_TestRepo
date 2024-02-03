@@ -13,6 +13,26 @@ func main () {
 	result := fibonacci(limit)
 	fmt.Printf("Fibonacci series up to %d: %v\n", limit, result)
 	fmt.Println("")
+
+	fmt.Println("====Starting the function done by Pamodi which will calculate the Area and Perimeter of a Rectangle====")
+	// Area and Perimeter of Rectangle
+	// Declare the length and width variables
+	var length, width float64
+	// Prompt user to enter the value of length and scan it
+	fmt.Println("Enter the length of the rectangle: ")
+	fmt.Scanln(&length)
+	// Prompt user to enter the value of width and scan it
+	fmt.Println("Enter the width of the rectangle: ")
+	fmt.Scanln(&width)
+	// Print user entered values
+	fmt.Println("Your length is: ", length)
+	fmt.Println("Your width is: ", width)
+	// Call function to calculate area and perimeter
+	area, perimeter := calcRectangleValues(length, width)
+	// Print the values returned from the function
+	fmt.Println("Area of the rectangle is: ", area)
+	fmt.Println("perimeter of the rectangle is: ", perimeter)
+	fmt.Println("")
 }
 
 // Created by Samhitha Dubbaka - 500225971
@@ -30,4 +50,13 @@ func fibonacci(limit int) []int {
 		series = append(series, nextNum)
 	}
 	return series
+}
+
+// Created by Balangoda Pamodi - 500229522
+// This function will accept length and width of a rectangle and return it's area and perimeter
+func calcRectangleValues(length, width float64) (float64, float64) {
+	var area = length * width
+	var perimeter = (length + width) * 2
+
+	return area, perimeter
 }
