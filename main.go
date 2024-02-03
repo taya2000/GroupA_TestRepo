@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-func main () {
-	
+func main() {
+
 	fmt.Println("====Starting the function done by Samhitha which will Print Fibonacci Series====")
 
 	//Fibonacci Series
@@ -33,6 +33,15 @@ func main () {
 	fmt.Println("Area of the rectangle is: ", area)
 	fmt.Println("perimeter of the rectangle is: ", perimeter)
 	fmt.Println("")
+
+	fmt.Println("====Starting the function done by Tejaswi which will calculate the factorial of a number====")
+	var num int
+	fmt.Println("Enter a number:")
+	fmt.Scanln(&num)
+
+	fact := factorial(num)
+	fmt.Println("Factorial of", num, "is", fact)
+	fmt.Println("")
 }
 
 // Created by Samhitha Dubbaka - 500225971
@@ -59,4 +68,15 @@ func calcRectangleValues(length, width float64) (float64, float64) {
 	var perimeter = (length + width) * 2
 
 	return area, perimeter
+}
+
+//Created by Tejaswi Cheripally - 500229934
+//This function will calculate the factorial of a number
+
+func factorial(n int) int {
+	result := 1
+	for i := 1; i <= n; i++ {
+		result *= i
+	}
+	return result
 }
