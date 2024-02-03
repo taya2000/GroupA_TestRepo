@@ -56,6 +56,13 @@ func main() {
 		fmt.Println(year, "is not a leap year.")
 	}
 
+	fmt.Println("====Starting the function done by Kamalpreet which will Print Sum of n numbers====")
+	var numbr int //Declared an integer variable represent n numbers
+	fmt.Print("Enter a number upto you want the sum:")
+	fmt.Scan(&numbr) //Take input from the user.
+	//Using Printf to print the values in a format.
+	fmt.Printf("The total of first %d number is %d", numbr, sum(numbr))
+
 }
 
 // Created by Samhitha Dubbaka - 500225971
@@ -101,4 +108,16 @@ func isLeapYear(year int) bool {
 	// Leap year conditions: divisible by 4, not divisible by 100 unless divisible by 400
 	return (year%4 == 0 && year%100 != 0) || (year%400 == 0)
 
+}
+
+//Created by Kamalpreet Kaur - 500218943
+//This function print the sum of first n numbers.
+
+func sum(digit int) int { //function with return type integer and 1 integer parameter
+	var total int
+	total = 0
+	for i := 1; i <= digit; i++ { //This loop retrieve all values upto entered digit
+		total = total + i // Adding all retrieved values
+	}
+	return total //Return sum of all numbers.
 }
