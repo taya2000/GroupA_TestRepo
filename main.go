@@ -95,6 +95,8 @@ func factorial(n int) int {
 	return result
 }
 
+//Created by Abhisheik Yadla - 500219580
+//This function will check whether the given year is leap year or not
 func isLeapYear(year int) bool {
 	// Leap year conditions: divisible by 4, not divisible by 100 unless divisible by 400
 	return (year%4 == 0 && year%100 != 0) || (year%400 == 0)
