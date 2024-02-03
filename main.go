@@ -42,6 +42,20 @@ func main() {
 	fact := factorial(num)
 	fmt.Println("Factorial of", num, "is", fact)
 	fmt.Println("")
+
+	//fmt.println("====Starting the function done by Abhisheik Yadla which will print Hello world====")
+
+	var year int
+
+	fmt.Print("Enter a year: ")
+	fmt.Scan(&year)
+
+	if isLeapYear(year) {
+		fmt.Println(year, "is a leap year.")
+	} else {
+		fmt.Println(year, "is not a leap year.")
+	}
+
 }
 
 // Created by Samhitha Dubbaka - 500225971
@@ -79,4 +93,10 @@ func factorial(n int) int {
 		result *= i
 	}
 	return result
+}
+
+func isLeapYear(year int) bool {
+	// Leap year conditions: divisible by 4, not divisible by 100 unless divisible by 400
+	return (year%4 == 0 && year%100 != 0) || (year%400 == 0)
+
 }
