@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 
@@ -63,6 +66,16 @@ func main() {
 	//Using Printf to print the values in a format.
 	fmt.Printf("The total of first %d number is %d", numbr, sum(numbr))
 
+	fmt.Println("====Starting the function done by Rohit which check a string palindrome====")
+	var str string //Declaring variable with data type string
+	fmt.Print("Enter a string:")
+	fmt.Scan(&str)       //Taking user input.
+	if palindrome(str) { //Final comparions to print.
+		fmt.Printf("%s is a palindrome", str)
+	} else {
+		fmt.Printf("%s is not a palindrome", str)
+	}
+
 }
 
 // Created by Samhitha Dubbaka - 500225971
@@ -102,8 +115,8 @@ func factorial(n int) int {
 	return result
 }
 
-//Created by Abhisheik Yadla - 500219580
-//This function will check whether the given year is leap year or not
+// Created by Abhisheik Yadla - 500219580
+// This function will check whether the given year is leap year or not
 func isLeapYear(year int) bool {
 	// Leap year conditions: divisible by 4, not divisible by 100 unless divisible by 400
 	return (year%4 == 0 && year%100 != 0) || (year%400 == 0)
@@ -120,4 +133,19 @@ func sum(digit int) int { //function with return type integer and 1 integer para
 		total = total + i // Adding all retrieved values
 	}
 	return total //Return sum of all numbers.
+}
+
+//Created by Rohit - 500230041
+//This function will check whether provided string is a palindrome or not.
+
+func palindrome(palin string) bool { //Function with string as parameeter and boolean data type.
+	palin = strings.ToLower(palin) // string.ToLower() func will lower the case of given string.
+
+	for i, j := 0, len(palin)-1; i < j; i, j = i+1, j-1 {
+		if palin[i] != palin[j] { //Comparing the main string and reversed string.
+			return false //Will return false if the reversed string don't match.
+		}
+	}
+	return true
+
 }
